@@ -1,19 +1,3 @@
-// 数字枚举
-enum Role {
-  Reporter = 0,
-  Reader,
-  Manager,
-  Cleaner,
-  Investor
-}
-console.log(`🍉 ~ 数字枚举`, Role)
-
-enum Message {
-  fail = "失败",
-  success = "成功",
-  loading = '办理中'
-}
-console.log('字符串枚举---', Message);
 
 // 接口
 interface Person {
@@ -47,3 +31,33 @@ let strs: string = greeter({ firstName: "zhanyang", lastName: "twoyoung" })
 
 console.log('class 类---', user);
 console.log('接口---', strs);
+
+// 对象类型接口
+interface List {
+  readonly id: number; // 只读
+  name: string;
+  has: boolean;
+}
+interface Result {
+  data: List[]
+}
+
+function render(result: Result) {
+  console.log(`🍉 ~ render ~ result`, result.data)
+}
+
+let result = {
+  data: [
+    { id: 0, name: '中华', has: true },
+    { id: 2, name: '民族', has: false }
+  ]
+}
+
+render(result)
+
+interface StringArray {
+  [index: number]: string
+}
+
+let chars: StringArray = ["A", "B"]
+console.log(`🍉 ~ chars`, chars)

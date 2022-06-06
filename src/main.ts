@@ -1,6 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import "../show/index";
+
+// 批量引入 .ts 文件
+require.context('../route/', true, /\.ts$/).keys().map(val => {
+  import(`../route${val.split('.')?.[1]}`)
+})
 
 // 对象
 const obj: { x: number, y: number } = { x: 1, y: 2 }
