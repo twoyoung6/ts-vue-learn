@@ -19,4 +19,6 @@ const func = () => { }
 let x
 x = []
 x = 1
+import VConsole from 'vconsole';
+const vConsole = new VConsole({ theme: 'dark' });
 createApp(App).mount('#app')
